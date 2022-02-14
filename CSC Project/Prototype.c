@@ -31,13 +31,18 @@ int main()
 
     switch (menu)
     {
+    case 0:
+        printf("You pick 0");
+        break;
     case 1:
         printf("You pick 1");
         break;
     case 2:
         printf("You pick 2");
+        break;
     case 3:
         printf("You pick 3");
+        break;
     default:
         break;
     }

@@ -36,6 +36,8 @@ int main()
         break;
     case 2:
         printf("You pick 2");
+    case 3:
+        printf("You pick 3");
     default:
         break;
     }

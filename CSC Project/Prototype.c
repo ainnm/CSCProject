@@ -8,6 +8,7 @@
 
 int Booking();
 void Destination(void);
+int billBooking(char destinationCharacter);
 
 int main()
 {
@@ -28,6 +29,7 @@ int main()
     printf("%s   ---------------Menu----------------\n\n", fiveTabs);
     printf("%s  [0] Start Booking\n", sixTabs);
     printf("%s  [1] Display Destination\n", sixTabs);
+    printf("%s  [2] Display Aircraft\n", sixTabs);
 
     char continueOperation;
     int menu;
@@ -43,13 +45,13 @@ int main()
     case 1:
         Destination();
         break;
+    case 2:
+        printf("\n%s\tAircraft\n\n", sixTabs);
+        break;
     default:
         printf("\n\n%s      Invalid input", fiveTabs);
-        scanf("%d", menu);
         break;
     }
-    printf("\n%sDo you want to choose another menu? [y/n]\n", fiveTabs);
-    scanf("%c", &continueOperation);
 }
 
 int Booking()
@@ -57,8 +59,37 @@ int Booking()
     char destinationCharacter;
     printf("\n\n%s   ----------Booking Section----------", fiveTabs);
     Destination();
-    // printf("\n\n%sPlease choose your desired destination based on the destination code: ", fourTabs);
-    // scanf("%c", &destinationCharacter);
+    printf("\n\n%sPlease choose your desired destination based on the destination code: ", fourTabs);
+    scanf(" %c", &destinationCharacter);
+    billBooking(destinationCharacter);
+}
+
+int billBooking(char destinationCharacter)
+{
+    switch (destinationCharacter)
+    {
+    case 'A':
+        printf("You pick A");
+        break;
+    case 'B':
+        printf("You pick B");
+        break;
+    case 'C':
+        printf("You pick C");
+        break;
+    case 'D':
+        printf("You pick D");
+        break;
+    case 'E':
+        printf("You pick E");
+        break;
+    case 'F':
+        printf("You pick F");
+        break;
+    default:
+        printf("You pick C");
+        break;
+    }
 }
 
 void Destination(void)

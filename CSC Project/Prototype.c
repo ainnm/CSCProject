@@ -88,7 +88,7 @@ int billBooking(char destinationCharacter, int numberTicket, char name[50], int 
 {
     float totalPrice;
     printf("\n\n%s-------------------------BOARDING PASS-------------------------", fourTabs);
-    printf("\n\n%sName: %s\t\tAge: %d\t\t\t\tNationality: %s", fourTabs, name, age, nationality);
+    printf("\n\n%sName: %s\t\tAge: %d\t\t\tNationality: %s", fourTabs, name, age, nationality);
     switch (destinationCharacter)
     {
     case 'A':

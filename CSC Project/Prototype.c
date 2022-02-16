@@ -1,21 +1,20 @@
 #include <stdio.h>
-#define spacingTabs "\t\t\t\t"
+#define spacingTabs "\t\t\t\t\t\t"
+void Booking();
+
 int main()
 {
     /*--------------------------------------This is the art-------------------------------------------------*/
-    printf("                          68b                         68b        `MM 68b                   \n");
-    printf("                          Y89                         Y89         MM Y89                   \n");
-    printf("  ____      ___     ____  ___   ____            ___   ___ ___  __ MM ___ ___  __     ____  \n");
-    printf(" 6MMMMb.  6MMMMb   6MMMMb\\`MM  6MMMMb.        6MMMMb  `MM `MM 6MM MM `MM `MM 6MMb   6MMMMb\n");
-    printf("6M'   Mb 8M'  `Mb MM'    ` MM 6M'   Mb       8M'  `Mb  MM  MM69   MM  MM  MMM9 `Mb 6M'  `Mb\n");
-    printf("MM    `'     ,oMM YM.      MM MM    `'           ,oMM  MM  MM'    MM  MM  MM'   MM MM    MM\n");
-    printf("MM       ,6MM9'MM  YMMMMb  MM MM             ,6MM9'MM  MM  MM     MM  MM  MM    MM MMMMMMMM\n");
-    printf("MM       MM'   MM      `Mb MM MM             MM'   MM  MM  MM     MM  MM  MM    MM MM      \n");
-    printf("YM.   d9 MM.  ,MM L    ,MM MM YM.   d9       MM.  ,MM  MM  MM     MM  MM  MM    MM YM    d9\n");
-    printf(" YMMMM9  `YMMM9'YbMYMMMM9 _MM_ YMMMM9        `YMMM9'Yb_MM__MM_   _MM__MM__MM_  _MM_ YMMMM9 \n\n\n");
+    printf("              888                                                     ,e,                                          \n");
+    printf(" dP\"Y  ,e e,  888  ,\"Y88b 888 8e   e88 888  e88 88e  888,8,    ,\"Y88b  \"  888,8, Y8b Y8b Y888P  ,\"Y88b Y8b Y888P  dP\"Y \n");
+    printf("C88b  d88 88b 888 \"8\" 888 888 88b d888 888 d888 888b 888 \"    \"8\" 888 888 888 \"   Y8b Y8b Y8P  \"8\" 888  Y8b Y8P  C88b  \n");
+    printf(" Y88D 888   , 888 ,ee 888 888 888 Y888 888 Y888 888P 888      ,ee 888 888 888      Y8b Y8b \"   ,ee 888   Y8b Y    Y88D \n");
+    printf("d,dP   \"YeeP\" 888 \"88 888 888 888  \"88 888  \"88 88\"  888      \"88 888 888 888       YP  Y8P    \"88 888    888    d,dP  \n");
+    printf("                                    ,  88P                                                                888          \n");
+    printf("                                   \"8\",P\"                                                                 888          \n\n\n");
     /*--------------------------------------This is the art-------------------------------------------------*/
 
-    printf("%sWelcome to Casic Airlines\n\n", spacingTabs);
+    printf("%sWelcome to Selangor Airways\n\n", spacingTabs);
     printf("%sSlogan\n", spacingTabs);
 
     printf("%s\tMenu\n", spacingTabs);
@@ -32,10 +31,10 @@ int main()
     switch (menu)
     {
     case 0:
-        printf("You pick 0");
+        Booking();
         break;
     case 1:
-        printf("You pick 1");
+        printf("You pick ");
         break;
     case 2:
         printf("You pick 2");
@@ -46,4 +45,11 @@ int main()
     default:
         break;
     }
+}
+
+void Booking()
+{
+    printf("\n\n%s----------Booking Section----------\n", spacingTabs);
+    printf("\t\tPlease choose your desired destination based on the destination code\n");
+    printf("Destination Code\tDestination\tDeparture Time\tArrival Time\tTicket Price");
 }

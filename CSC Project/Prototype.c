@@ -8,7 +8,7 @@
 
 int Booking();
 void Destination(void);
-int billBooking(char destinationCharacter, int numberTicket);
+int billBooking(char destinationCharacter, int numberTicket, char name[50], int age, char nationality[50]);
 
 int main()
 {
@@ -56,55 +56,76 @@ int main()
 
 int Booking()
 {
+    int age;
+    char name[50];
     char destinationCharacter;
     int numberTicket;
+    char nationality[50];
+
     printf("\n\n%s   ----------Booking Section----------", fiveTabs);
     Destination();
 
     printf("\n\n%sPlease choose your desired destination based on the destination code: ", fourTabs);
     scanf(" %c", &destinationCharacter);
 
-    printf("\n\n%sHow many tickets would you like to buy: ", fourTabs);
+    printf("\n\n%sNumber of passengers: ", fourTabs);
     scanf("%d", &numberTicket);
 
-    billBooking(destinationCharacter, numberTicket);
+    printf("\n\n%s   --------------User Information-------------", fiveTabs);
+    printf("\n\n%sInsert your username: ", fiveTabs);
+    scanf("%s", name);
+
+    printf("\n\n%sInser your age: ", fiveTabs);
+    scanf("%d", &age);
+
+    printf("\n\n%sNationality: ", fiveTabs);
+    scanf("%s", nationality);
+
+    billBooking(destinationCharacter, numberTicket, name, age, nationality);
 }
 
-int billBooking(char destinationCharacter, int numberTicket)
+int billBooking(char destinationCharacter, int numberTicket, char name[50], int age, char nationality[50])
 {
     float totalPrice;
     printf("\n\n%s-------------------------BOARDING PASS-------------------------", fourTabs);
+    printf("\n\n%sName: %s\t\tAge: %d\t\t\t\t\Nationality: %s", fourTabs, name, age, nationality);
     switch (destinationCharacter)
     {
     case 'A':
+
         printf("\n\n%sDestination: Kuantan\tDeparture: 9:30am\tArrival: 10:40pm\n", fourTabs);
         totalPrice = numberTicket * 185.5;
-        printf("\n%sTicket price: RM%.2f", fourTabs, totalPrice);
+        printf("\n%sTicket ticket price: RM%.2f\t\tNumber of passengers: %d", fourTabs, totalPrice, numberTicket);
         break;
     case 'B':
+
         totalPrice = numberTicket * 190.5;
         printf("\n\n%sDestination: Kuantan\tDeparture: 9:30am\tArrival: 10:40pm\n", fourTabs);
-        printf("\n%sTicket price: RM%.2f", fourTabs, totalPrice);
+        printf("\n%sTicket ticket price: RM%.2f\t\tNumber of passengers: %d", fourTabs, totalPrice, numberTicket);
         break;
     case 'C':
+
         totalPrice = numberTicket * 210.0;
         printf("\n\n%sDestination: Kuantan\tDeparture: 9:30am\tArrival: 10:40pm\n", fourTabs);
-        printf("\n%sTicket price: RM%.2f", fourTabs, totalPrice);
+        printf("\n%sTicket ticket price: RM%.2f\t\tNumber of passengers: %d", fourTabs, totalPrice, numberTicket);
         break;
     case 'D':
+
         totalPrice = numberTicket * 185.5;
         printf("\n\n%sDestination: Kuantan\tDeparture: 9:30am\tArrival: 10:40pm\n", fourTabs);
-        printf("\n%sTicket price: RM%.2f", fourTabs, totalPrice);
+        printf("\n%sTotal ticket price: RM%.2f\t\tNumber of passengers: %d", fourTabs, totalPrice, numberTicket);
         break;
     case 'E':
+
         totalPrice = numberTicket * 190.5;
         printf("\n\n%sDestination: Kuantan\tDeparture: 9:30am\tArrival: 10:40pm\n", fourTabs);
-        printf("\n%sTicket price: RM%.2f", fourTabs, totalPrice);
+        printf("\n%sTicket ticket price: RM%.2f\t\tNumber of passengers: %d", fourTabs, totalPrice, numberTicket);
         break;
     case 'F':
+
         totalPrice = numberTicket * 210.5;
         printf("\n\n%sDestination: Kuantan\tDeparture: 9:30am\tArrival: 10:40pm\n", fourTabs);
-        printf("\n%sTicket price: RM%.2f", fourTabs, totalPrice);
+        printf("\n%sTicket ticket price: RM%.2f\t\tNumber of passengers: %d", fourTabs, totalPrice, numberTicket);
         break;
     default:
         printf("Invalid Character");

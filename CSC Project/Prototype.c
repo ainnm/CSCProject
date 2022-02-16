@@ -1,6 +1,13 @@
 #include <stdio.h>
-#define spacingTabs "\t\t\t\t\t\t"
+
+#define sixTabs "\t\t\t\t\t\t"
+#define fiveTabs "\t\t\t\t\t"
+#define fourTabs "\t\t\t\t"
+#define tripleTabs "\t\t\t"
+#define twoTabs "\t\t"
+
 void Booking();
+void Destination();
 
 int main()
 {
@@ -14,18 +21,15 @@ int main()
     printf("                                   \"8\",P\"                                                                 888          \n\n\n");
     /*--------------------------------------This is the art-------------------------------------------------*/
 
-    printf("%sWelcome to Selangor Airways\n\n", spacingTabs);
-    printf("%sSlogan\n", spacingTabs);
+    printf("%s       Welcome to Selangor Airways\n\n", fiveTabs);
+    printf("%s                 Slogan\n\n\n", fiveTabs);
 
-    printf("%s\tMenu\n", spacingTabs);
-    printf("%s----------------------\n", spacingTabs);
-    printf("%s[0] Start Booking\n", spacingTabs);
-    printf("%s[1] Display avalaible destination\n", spacingTabs);
-    printf("%s[2] Display aircraft\n", spacingTabs);
-    printf("%s[3] Display airport\n\n", spacingTabs);
+    printf("%s   ---------------Menu----------------\n\n", fiveTabs);
+    printf("%s  [0] Start Booking\n", sixTabs);
+    printf("%s  [1] Display Destination\n", sixTabs);
 
     int menu;
-    printf("\t\tChoose the number provided in the menu to go to your desired page: ");
+    printf("\n\n%s      Choose the number provided in the menu to go to your desired page: ", tripleTabs);
     scanf("%d", &menu);
 
     switch (menu)
@@ -34,22 +38,31 @@ int main()
         Booking();
         break;
     case 1:
-        printf("You pick ");
-        break;
-    case 2:
-        printf("You pick 2");
-        break;
-    case 3:
-        printf("You pick 3");
+        Destination();
         break;
     default:
+        printf("Error. Please insert your option again.");
         break;
     }
 }
 
 void Booking()
 {
-    printf("\n\n%s----------Booking Section----------\n", spacingTabs);
-    printf("\t\tPlease choose your desired destination based on the destination code\n");
-    printf("Destination Code\tDestination\tDeparture Time\tArrival Time\tTicket Price");
+    char destinationNumber;
+    Destination();
+
+    printf("\n\n%sPlease choose your desired destination based on the destination code: ", fourTabs);
+    scanf("%c", &destinationNumber);
+}
+
+void Destination()
+{
+    printf("\n\n%s   ----------Booking Section----------\n", fiveTabs);
+    printf("\n\n%s  Destination Code      Destination        Departure Time     Arrival Time      Ticket Price\n", twoTabs);
+    printf("%s       [A]                Kuantan              9:30am           10:40pm           RM185.50 \n", twoTabs);
+    printf("%s       [A]                Kuantan              9:30am           10:40pm           RM185.50 \n", twoTabs);
+    printf("%s       [A]                Kuantan              9:30am           10:40pm           RM185.50 \n", twoTabs);
+    printf("%s       [A]                Kuantan              9:30am           10:40pm           RM185.50 \n", twoTabs);
+    printf("%s       [A]                Kuantan              9:30am           10:40pm           RM185.50 \n", twoTabs);
+    printf("%s       [A]                Kuantan              9:30am           10:40pm           RM185.50 \n", twoTabs);
 }

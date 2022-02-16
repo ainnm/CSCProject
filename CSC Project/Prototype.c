@@ -49,7 +49,7 @@ int main()
         printf("\n%s\tAircraft\n\n", sixTabs);
         break;
     default:
-        printf("\n\n%s      Invalid input", fiveTabs);
+        printf("\n\n%s      Invalid input", sixTabs);
         break;
     }
 }
@@ -64,44 +64,54 @@ int Booking()
     printf("\n\n%sPlease choose your desired destination based on the destination code: ", fourTabs);
     scanf(" %c", &destinationCharacter);
 
-    printf("\n\n%sHow many tickets would you like to buy?");
-    scanf("%d", numberTicket);
+    printf("\n\n%sHow many tickets would you like to buy: ", fourTabs);
+    scanf("%d", &numberTicket);
 
     billBooking(destinationCharacter, numberTicket);
 }
 
 int billBooking(char destinationCharacter, int numberTicket)
 {
-
+    float totalPrice;
+    printf("\n\n%s-------------------------BOARDING PASS-------------------------", fourTabs);
     switch (destinationCharacter)
     {
     case 'A':
-        printf("Destination: Kuantan\tDeparture: 9:30am\tArrival: 10:40pm\n");
-        printf("Ticket price: %d", numberTicket * 185.5);
+        printf("\n\n%sDestination: Kuantan\tDeparture: 9:30am\tArrival: 10:40pm\n", fourTabs);
+        totalPrice = numberTicket * 185.5;
+        printf("\n%sTicket price: RM%.2f", fourTabs, totalPrice);
         break;
     case 'B':
-        printf("Destination: Kuantan\tDeparture: 9:30am\tArrival: 10:40pm\n");
-        printf("Ticket price: %d", numberTicket * 190.5);
+        totalPrice = numberTicket * 190.5;
+        printf("\n\n%sDestination: Kuantan\tDeparture: 9:30am\tArrival: 10:40pm\n", fourTabs);
+        printf("\n%sTicket price: RM%.2f", fourTabs, totalPrice);
         break;
     case 'C':
-        printf("Destination: Kuantan\tDeparture: 9:30am\tArrival: 10:40pm\n");
-        printf("Ticket price: %d", numberTicket * 210.0);
+        totalPrice = numberTicket * 210.0;
+        printf("\n\n%sDestination: Kuantan\tDeparture: 9:30am\tArrival: 10:40pm\n", fourTabs);
+        printf("\n%sTicket price: RM%.2f", fourTabs, totalPrice);
         break;
     case 'D':
-        printf("Destination: Kuantan\tDeparture: 9:30am\tArrival: 10:40pm\n");
-        printf("Ticket price: %d", numberTicket * 185.5);
+        totalPrice = numberTicket * 185.5;
+        printf("\n\n%sDestination: Kuantan\tDeparture: 9:30am\tArrival: 10:40pm\n", fourTabs);
+        printf("\n%sTicket price: RM%.2f", fourTabs, totalPrice);
         break;
     case 'E':
-        printf("Destination: Kuantan\tDeparture: 9:30am\tArrival: 10:40pm\n");
-        printf("Ticket price: %d", numberTicket * 190.5);
+        totalPrice = numberTicket * 190.5;
+        printf("\n\n%sDestination: Kuantan\tDeparture: 9:30am\tArrival: 10:40pm\n", fourTabs);
+        printf("\n%sTicket price: RM%.2f", fourTabs, totalPrice);
         break;
     case 'F':
-        printf("Destination: Kuantan\tDeparture: 9:30am\tArrival: 10:40pm\n");
-        printf("Ticket price: %d", numberTicket * 210.5);
+        totalPrice = numberTicket * 210.5;
+        printf("\n\n%sDestination: Kuantan\tDeparture: 9:30am\tArrival: 10:40pm\n", fourTabs);
+        printf("\n%sTicket price: RM%.2f", fourTabs, totalPrice);
         break;
     default:
+        printf("Invalid Character");
         break;
     }
+
+    printf("\n\n%s---------------------------------------------------------------", fourTabs);
 }
 
 void Destination(void)

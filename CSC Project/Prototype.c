@@ -6,11 +6,12 @@
 #define tripleTabs "\t\t\t"
 #define twoTabs "\t\t"
 
-void Booking();
-void Destination();
+int Booking();
+void Destination(void);
 
 int main()
 {
+
     /*--------------------------------------This is the art-------------------------------------------------*/
     printf("              888                                                     ,e,                                          \n");
     printf(" dP\"Y  ,e e,  888  ,\"Y88b 888 8e   e88 888  e88 88e  888,8,    ,\"Y88b  \"  888,8, Y8b Y8b Y888P  ,\"Y88b Y8b Y888P  dP\"Y \n");
@@ -31,7 +32,6 @@ int main()
     int menu;
     printf("\n\n%s      Choose the number provided in the menu to go to your desired page: ", tripleTabs);
     scanf("%d", &menu);
-
     switch (menu)
     {
     case 0:
@@ -41,23 +41,25 @@ int main()
         Destination();
         break;
     default:
-        printf("Error. Please insert your option again.");
+        printf("\n\n%s      Invalid input. Please choose again: ", fiveTabs);
+        scanf("%d", menu);
         break;
     }
 }
 
-void Booking()
+int Booking()
 {
-    char destinationNumber;
+    char destinationCharacter;
+    printf("\n\n%s   ----------Booking Section----------", fiveTabs);
     Destination();
-
     printf("\n\n%sPlease choose your desired destination based on the destination code: ", fourTabs);
-    scanf("%c", &destinationNumber);
+    scanf("%c", &destinationCharacter);
 }
 
-void Destination()
+void Destination(void)
 {
-    printf("\n\n%s   ----------Booking Section----------\n", fiveTabs);
+    char destination;
+    printf("\n\n%s   -------Available Destination------\n", fiveTabs);
     printf("\n\n%s  Destination Code      Destination        Departure Time     Arrival Time      Ticket Price\n", twoTabs);
     printf("%s       [A]                Kuantan              9:30am           10:40pm           RM185.50 \n", twoTabs);
     printf("%s       [A]                Kuantan              9:30am           10:40pm           RM185.50 \n", twoTabs);

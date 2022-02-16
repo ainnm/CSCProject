@@ -29,9 +29,12 @@ int main()
     printf("%s  [0] Start Booking\n", sixTabs);
     printf("%s  [1] Display Destination\n", sixTabs);
 
+    char continueOperation;
     int menu;
+
     printf("\n\n%s      Choose the number provided in the menu to go to your desired page: ", tripleTabs);
     scanf("%d", &menu);
+
     switch (menu)
     {
     case 0:
@@ -41,10 +44,12 @@ int main()
         Destination();
         break;
     default:
-        printf("\n\n%s      Invalid input. Please choose again: ", fiveTabs);
+        printf("\n\n%s      Invalid input", fiveTabs);
         scanf("%d", menu);
         break;
     }
+    printf("\n%sDo you want to use choose another menu? [y/n]\n", fiveTabs);
+    scanf("%c", &continueOperation);
 }
 
 int Booking()

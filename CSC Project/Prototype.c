@@ -48,7 +48,7 @@ int main()
         scanf("%d", menu);
         break;
     }
-    printf("\n%sDo you want to use choose another menu? [y/n]\n", fiveTabs);
+    printf("\n%sDo you want to choose another menu? [y/n]\n", fiveTabs);
     scanf("%c", &continueOperation);
 }
 
@@ -57,14 +57,14 @@ int Booking()
     char destinationCharacter;
     printf("\n\n%s   ----------Booking Section----------", fiveTabs);
     Destination();
-    printf("\n\n%sPlease choose your desired destination based on the destination code: ", fourTabs);
-    scanf("%c", &destinationCharacter);
+    // printf("\n\n%sPlease choose your desired destination based on the destination code: ", fourTabs);
+    // scanf("%c", &destinationCharacter);
 }
 
 void Destination(void)
 {
     char destination;
-    printf("\n\n%s   -------Available Destination------\n", fiveTabs);
+    printf("\n\n%s   -------Available Destination-------\n", fiveTabs);
     printf("\n\n%s  Destination Code      Destination        Departure Time     Arrival Time      Ticket Price\n", twoTabs);
     printf("%s       [A]                Kuantan              9:30am           10:40pm           RM185.50 \n", twoTabs);
     printf("%s       [A]                Kuantan              9:30am           10:40pm           RM185.50 \n", twoTabs);

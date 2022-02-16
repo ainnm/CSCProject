@@ -8,7 +8,7 @@
 
 int Booking();
 void Destination(void);
-int billBooking(char destinationCharacter);
+int billBooking(char destinationCharacter, int numberTicket);
 
 int main()
 {
@@ -57,37 +57,49 @@ int main()
 int Booking()
 {
     char destinationCharacter;
+    int numberTicket;
     printf("\n\n%s   ----------Booking Section----------", fiveTabs);
     Destination();
+
     printf("\n\n%sPlease choose your desired destination based on the destination code: ", fourTabs);
     scanf(" %c", &destinationCharacter);
-    billBooking(destinationCharacter);
+
+    printf("\n\n%sHow many tickets would you like to buy?");
+    scanf("%d", numberTicket);
+
+    billBooking(destinationCharacter, numberTicket);
 }
 
-int billBooking(char destinationCharacter)
+int billBooking(char destinationCharacter, int numberTicket)
 {
+
     switch (destinationCharacter)
     {
     case 'A':
-        printf("You pick A");
+        printf("Destination: Kuantan\tDeparture: 9:30am\tArrival: 10:40pm\n");
+        printf("Ticket price: %d", numberTicket * 185.5);
         break;
     case 'B':
-        printf("You pick B");
+        printf("Destination: Kuantan\tDeparture: 9:30am\tArrival: 10:40pm\n");
+        printf("Ticket price: %d", numberTicket * 190.5);
         break;
     case 'C':
-        printf("You pick C");
+        printf("Destination: Kuantan\tDeparture: 9:30am\tArrival: 10:40pm\n");
+        printf("Ticket price: %d", numberTicket * 210.0);
         break;
     case 'D':
-        printf("You pick D");
+        printf("Destination: Kuantan\tDeparture: 9:30am\tArrival: 10:40pm\n");
+        printf("Ticket price: %d", numberTicket * 185.5);
         break;
     case 'E':
-        printf("You pick E");
+        printf("Destination: Kuantan\tDeparture: 9:30am\tArrival: 10:40pm\n");
+        printf("Ticket price: %d", numberTicket * 190.5);
         break;
     case 'F':
-        printf("You pick F");
+        printf("Destination: Kuantan\tDeparture: 9:30am\tArrival: 10:40pm\n");
+        printf("Ticket price: %d", numberTicket * 210.5);
         break;
     default:
-        printf("You pick C");
         break;
     }
 }
@@ -96,11 +108,11 @@ void Destination(void)
 {
     char destination;
     printf("\n\n%s   -------Available Destination-------\n", fiveTabs);
-    printf("\n\n%s  Destination Code      Destination        Departure Time     Arrival Time      Ticket Price\n", twoTabs);
-    printf("%s       [A]                Kuantan              9:30am           10:40pm           RM185.50 \n", twoTabs);
-    printf("%s       [A]                Kuantan              9:30am           10:40pm           RM185.50 \n", twoTabs);
-    printf("%s       [A]                Kuantan              9:30am           10:40pm           RM185.50 \n", twoTabs);
-    printf("%s       [A]                Kuantan              9:30am           10:40pm           RM185.50 \n", twoTabs);
-    printf("%s       [A]                Kuantan              9:30am           10:40pm           RM185.50 \n", twoTabs);
-    printf("%s       [A]                Kuantan              9:30am           10:40pm           RM185.50 \n", twoTabs);
+    printf("\n\n%s  Destination Code      Destination         Departure Time     Arrival Time      Ticket Price\n", twoTabs);
+    printf("%s       [A]                Kuantan               9:30am            10:40pm          RM185.50 \n", twoTabs);
+    printf("%s       [B]                Kuala Terengganu      10:30am           12:00pm          RM190.50 \n", twoTabs);
+    printf("%s       [C]                Kota Bharu            11:30am           1:30pm           RM210.00 \n", twoTabs);
+    printf("%s       [D]                Johor Bharu           10:00am           11:15pm          RM185.50 \n", twoTabs);
+    printf("%s       [E]                Penang                11:00am           12:30pm          RM190.50 \n", twoTabs);
+    printf("%s       [F]                Alor Setar            12:00am           2:00pm           RM210.00 \n", twoTabs);
 }

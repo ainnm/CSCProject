@@ -1,1 +1,1 @@
-n
+scanf(" %c", destinationCharacter

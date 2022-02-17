@@ -8,7 +8,7 @@
 
 int Booking();
 void Destination(void);
-int billBooking(char destinationCharacter, int numberTicket, char name[50], int age, char nationality[50]);
+int billBooking(char destinationCharacter, char name[50], char nationality[50], int age, int numberTicket);
 
 int main()
 {
@@ -56,11 +56,12 @@ int main()
 
 int Booking()
 {
+    int numberTicket;
     char name[50];
     int age;
     char nationality[50];
     char destinationCharacter;
-    int numberTicket;
+    int canContinue = 1;
 
     printf("\n\n%s   ----------Booking Section----------", fiveTabs);
     Destination();
@@ -68,30 +69,43 @@ int Booking()
     printf("\n\n%sPlease choose your desired destination based on the destination code: ", fourTabs);
     scanf(" %c", &destinationCharacter);
 
-    printf("\n\n%sNumber of passengers: ", fourTabs);
-    scanf("%d", &numberTicket);
+    while (canContinue == 1)
+    {
+        if (destinationCharacter > 'F')
+        {
+            printf("\n\t%sInvalid Input", sixTabs);
+            canContinue = 0;
+        }
+        else
+        {
+            printf("\n\n%sNumber of passengers: ", fourTabs);
+            scanf("%d", &numberTicket);
 
-    printf("\n\n%s   --------------User Information-------------", fiveTabs);
-    printf("\n\n%sInsert your username: ", fiveTabs);
-    scanf("%s", name);
+            printf("\n\n%s   --------------User Information-------------", fiveTabs);
+            printf("\n\n%sInsert your username: ", fiveTabs);
+            scanf("%s", name);
 
-    printf("\n\n%sInsert your age: ", fiveTabs);
-    scanf("%d", &age);
+            printf("\n\n%sInsert your age: ", fiveTabs);
+            scanf("%d", &age);
 
-    printf("\n\n%sNationality: ", fiveTabs);
-    scanf("%s", nationality);
+            printf("\n\n%sNationality: ", fiveTabs);
+            scanf("%s", nationality);
 
-    billBooking(destinationCharacter, numberTicket, name, age, nationality);
+            billBooking(destinationCharacter, name, nationality, age, numberTicket);
+            canContinue = 0;
+        }
+    }
 }
 
-int billBooking(char destinationCharacter, int numberTicket, char name[50], int age, char nationality[50])
+int billBooking(char destinationCharacter, char name[50], char nationality[50], int age, int numberTicket)
 {
     char *destinationName;
     char *departure;
     char *arrival;
 
-    float totalPrice;
-    int numPassengers;
+    int canContinue;
+    float totalPrice = 0;
+    int numPassengers = 0;
 
     printf("\n\n%s-------------------------BOARDING PASS-------------------------", fourTabs);
     printf("\n\n%sName: %s\t\t\t\tNationality: %s", fourTabs, name, nationality);
@@ -140,10 +154,8 @@ int billBooking(char destinationCharacter, int numberTicket, char name[50], int 
 
         break;
     default:
-        printf("Invalid Character");
         break;
     }
-
     printf("\n\n%sDestination: %s\t\t\tAge: %d\n\n", fourTabs, destinationName, age);
     printf("\t%sDeparture: %s\t\t\tArrival: %s\n", tripleTabs, departure, arrival);
     printf("\n%sTotal ticket price: RM%.2f\t\tNumber of passengers: %d", fourTabs, totalPrice, numberTicket);

@@ -94,7 +94,7 @@ int billBooking(char destinationCharacter, int numberTicket, char name[50], int 
     int numPassengers;
 
     printf("\n\n%s-------------------------BOARDING PASS-------------------------", fourTabs);
-    printf("\n\n%sName: %s\tAge: %d\t\t\tNationality: %s", fourTabs, name, age, nationality);
+    printf("\n\n%sName: %s\t\t\t\tNationality: %s", fourTabs, name, nationality);
     switch (destinationCharacter)
     {
     case 'A':
@@ -144,8 +144,8 @@ int billBooking(char destinationCharacter, int numberTicket, char name[50], int 
         break;
     }
 
-    printf("\n\n%sDestination: %s", fourTabs, destinationName);
-    printf("\tDeparture: %s\tArrival: %s\n", departure, arrival);
+    printf("\n\n%sDestination: %s\t\t\tAge: %d\n\n", fourTabs, destinationName, age);
+    printf("\t%sDeparture: %s\t\t\tArrival: %s\n", tripleTabs, departure, arrival);
     printf("\n%sTotal ticket price: RM%.2f\t\tNumber of passengers: %d", fourTabs, totalPrice, numberTicket);
     printf("\n\n%s---------------------------------------------------------------", fourTabs);
 }

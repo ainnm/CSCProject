@@ -8,10 +8,13 @@
 
 int Booking();
 void Destination(void);
+void Aircraft(void);
 int billBooking(char destinationCharacter, char name[50], char nationality[50], int age, int numberTicket);
 
 int main()
 {
+    int canContinue2 = 1;
+    char wantContinue;
 
     /*--------------------------------------This is the art-------------------------------------------------*/
     printf("              888                                                     ,e,                                          \n");
@@ -26,31 +29,46 @@ int main()
     printf("%s       Welcome to Selangor Airways\n\n", fiveTabs);
     printf("%s                 Slogan\n\n\n", fiveTabs);
 
-    printf("%s   ---------------Menu----------------\n\n", fiveTabs);
-    printf("%s  [0] Start Booking\n", sixTabs);
-    printf("%s  [1] Display Destination\n", sixTabs);
-    printf("%s  [2] Display Aircraft\n", sixTabs);
-
-    char continueOperation;
-    int menu;
-
-    printf("\n\n%s      Choose the number provided in the menu to go to your desired page: ", tripleTabs);
-    scanf("%d", &menu);
-
-    switch (menu)
+    while (canContinue2 == 1)
     {
-    case 0:
-        Booking();
-        break;
-    case 1:
-        Destination();
-        break;
-    case 2:
-        printf("\n%s\tAircraft\n\n", sixTabs);
-        break;
-    default:
-        printf("\n\n%s      Invalid input", sixTabs);
-        break;
+        printf("%s   ---------------Menu----------------\n\n", fiveTabs);
+        printf("%s  [0] Start Booking\n", sixTabs);
+        printf("%s  [1] Display Destination\n", sixTabs);
+        printf("%s  [2] Display Aircraft\n", sixTabs);
+
+        int menu;
+
+        printf("\n\n%s      Choose the number provided in the menu to go to your desired page: ", tripleTabs);
+        scanf("%d", &menu);
+
+        switch (menu)
+        {
+        case 0:
+            Booking();
+            break;
+        case 1:
+            Destination();
+            break;
+        case 2:
+            Aircraft();
+            break;
+        default:
+            printf("\n\n%s      Invalid input", sixTabs);
+            break;
+        }
+        printf("\n\n%s\t---------End of operation----------\n\n", fiveTabs);
+        printf("\n%s\tDo you still want to choose other menu? [y/n]: ", fourTabs);
+        scanf(" %c", &wantContinue);
+
+        if (wantContinue == 'y')
+        {
+            printf("\n\n");
+            canContinue2 = 1;
+        }
+        else
+        {
+            canContinue2 = 0;
+        }
     }
 }
 
@@ -103,7 +121,6 @@ int billBooking(char destinationCharacter, char name[50], char nationality[50], 
     char *departure;
     char *arrival;
 
-    int canContinue;
     float totalPrice = 0;
     int numPassengers = 0;
 
@@ -177,5 +194,5 @@ void Destination(void)
 
 void Aircraft(void)
 {
-    printf("");
+    printf("%sAircraft", sixTabs);
 }

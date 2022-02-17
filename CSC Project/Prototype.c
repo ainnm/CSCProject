@@ -104,7 +104,6 @@ int billBooking(char destinationCharacter, int numberTicket, char name[50], int 
         totalPrice = numberTicket * 185.5;
 
         break;
-
     case 'B':
         destinationName = "Kuala Terengganu";
         departure = "10:30am";
@@ -112,7 +111,6 @@ int billBooking(char destinationCharacter, int numberTicket, char name[50], int 
         totalPrice = numberTicket * 190.5;
 
         break;
-
     case 'C':
         destinationName = "Kota Bharu";
         departure = "11:30am";

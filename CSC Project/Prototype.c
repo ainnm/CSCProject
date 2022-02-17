@@ -56,11 +56,11 @@ int main()
 
 int Booking()
 {
-    int age;
     char name[50];
+    int age;
+    char nationality[50];
     char destinationCharacter;
     int numberTicket;
-    char nationality[50];
 
     printf("\n\n%s   ----------Booking Section----------", fiveTabs);
     Destination();
@@ -75,7 +75,7 @@ int Booking()
     printf("\n\n%sInsert your username: ", fiveTabs);
     scanf("%s", name);
 
-    printf("\n\n%sInser your age: ", fiveTabs);
+    printf("\n\n%sInsert your age: ", fiveTabs);
     scanf("%d", &age);
 
     printf("\n\n%sNationality: ", fiveTabs);
@@ -86,58 +86,75 @@ int Booking()
 
 int billBooking(char destinationCharacter, int numberTicket, char name[50], int age, char nationality[50])
 {
+    char *destinationName;
+    char *departure;
+    char *arrival;
+
     float totalPrice;
+    int numPassengers;
+
     printf("\n\n%s-------------------------BOARDING PASS-------------------------", fourTabs);
-    printf("\n\n%sName: %s\t\tAge: %d\t\t\tNationality: %s", fourTabs, name, age, nationality);
+    printf("\n\n%sName: %s\tAge: %d\t\t\tNationality: %s", fourTabs, name, age, nationality);
     switch (destinationCharacter)
     {
     case 'A':
-
-        printf("\n\n%sDestination: Kuantan\tDeparture: 9:30am\tArrival: 10:40pm\n", fourTabs);
+        destinationName = "Kuantan";
+        departure = "9:30am";
+        arrival = "10:40pm";
         totalPrice = numberTicket * 185.5;
-        printf("\n%sTicket ticket price: RM%.2f\t\tNumber of passengers: %d", fourTabs, totalPrice, numberTicket);
+
         break;
+
     case 'B':
-
+        destinationName = "Kuala Terengganu";
+        departure = "10:30am";
+        arrival = "12:00pm";
         totalPrice = numberTicket * 190.5;
-        printf("\n\n%sDestination: Kuantan\tDeparture: 9:30am\tArrival: 10:40pm\n", fourTabs);
-        printf("\n%sTicket ticket price: RM%.2f\t\tNumber of passengers: %d", fourTabs, totalPrice, numberTicket);
-        break;
-    case 'C':
 
+        break;
+
+    case 'C':
+        destinationName = "Kota Bharu";
+        departure = "11:30am";
+        arrival = "1:30pm";
         totalPrice = numberTicket * 210.0;
-        printf("\n\n%sDestination: Kuantan\tDeparture: 9:30am\tArrival: 10:40pm\n", fourTabs);
-        printf("\n%sTicket ticket price: RM%.2f\t\tNumber of passengers: %d", fourTabs, totalPrice, numberTicket);
+
         break;
     case 'D':
-
+        destinationName = "Johor Bharu";
+        departure = "11:30am";
+        arrival = "11:15pm";
         totalPrice = numberTicket * 185.5;
-        printf("\n\n%sDestination: Kuantan\tDeparture: 9:30am\tArrival: 10:40pm\n", fourTabs);
-        printf("\n%sTotal ticket price: RM%.2f\t\tNumber of passengers: %d", fourTabs, totalPrice, numberTicket);
+
         break;
     case 'E':
-
+        destinationName = "Penang";
+        departure = "11:00am";
+        arrival = "12:30pm";
         totalPrice = numberTicket * 190.5;
-        printf("\n\n%sDestination: Kuantan\tDeparture: 9:30am\tArrival: 10:40pm\n", fourTabs);
-        printf("\n%sTicket ticket price: RM%.2f\t\tNumber of passengers: %d", fourTabs, totalPrice, numberTicket);
+
         break;
     case 'F':
-
+        destinationName = "Alor Setar";
+        departure = "12:00am";
+        arrival = "2:00pm";
         totalPrice = numberTicket * 210.5;
-        printf("\n\n%sDestination: Kuantan\tDeparture: 9:30am\tArrival: 10:40pm\n", fourTabs);
-        printf("\n%sTicket ticket price: RM%.2f\t\tNumber of passengers: %d", fourTabs, totalPrice, numberTicket);
+
         break;
     default:
         printf("Invalid Character");
         break;
     }
 
+    printf("\n\n%sDestination: %s", fourTabs, destinationName);
+    printf("\tDeparture: %s\tArrival: %s\n", departure, arrival);
+    printf("\n%sTotal ticket price: RM%.2f\t\tNumber of passengers: %d", fourTabs, totalPrice, numberTicket);
     printf("\n\n%s---------------------------------------------------------------", fourTabs);
 }
 
 void Destination(void)
 {
-    char destination;
+
     printf("\n\n%s   -------Available Destination-------\n", fiveTabs);
     printf("\n\n%s  Destination Code      Destination         Departure Time     Arrival Time      Ticket Price\n", twoTabs);
     printf("%s       [A]                Kuantan               9:30am            10:40pm          RM185.50 \n", twoTabs);
@@ -146,4 +163,9 @@ void Destination(void)
     printf("%s       [D]                Johor Bharu           10:00am           11:15pm          RM185.50 \n", twoTabs);
     printf("%s       [E]                Penang                11:00am           12:30pm          RM190.50 \n", twoTabs);
     printf("%s       [F]                Alor Setar            12:00am           2:00pm           RM210.00 \n", twoTabs);
+}
+
+void Aircraft(void)
+{
+    printf("");
 }

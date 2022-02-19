@@ -173,9 +173,22 @@ int billBooking(char destinationCharacter, char name[50], char nationality[50], 
     default:
         break;
     }
+
     printf("\n\n%sDestination: %s\t\t\tAge: %d\n\n", fourTabs, destinationName, age);
     printf("\t%sDeparture: %s\t\t\tArrival: %s\n", tripleTabs, departure, arrival);
-    printf("\n%sTotal ticket price: RM%.2f\t\tNumber of passengers: %d", fourTabs, totalPrice, numberTicket);
+    if (totalPrice > 500)
+    {
+        float discount = 0.1;
+        float priceDiscount = discount * totalPrice;
+
+        printf("\n%sTotal ticket price: RM%.2f\t\tNumber of passengers: %d", fourTabs, totalPrice, numberTicket);
+        printf("\n\n%sDue to the pandemic of Covid 19, Selangor Airways will give a 10%% discount \n%sfor customers with a total price more than RM500.00.", fourTabs, fourTabs);
+    }
+    else
+    {
+        printf("\n%sTotal ticket price: RM%.2f\t\tNumber of passengers: %d", fourTabs, totalPrice, numberTicket);
+    }
+
     printf("\n\n%s---------------------------------------------------------------", fourTabs);
 }
 
@@ -194,5 +207,52 @@ void Destination(void)
 
 void Aircraft(void)
 {
-    printf("%sAircraft", sixTabs);
+    printf("\n\n%s   -------Collections of Aircraft------\n\n", fiveTabs);
+
+    // AIRCRAFT 1
+    printf("%s Boeing 777\n\n", fiveTabs);
+    printf("%s______                                                    \n", fiveTabs);
+    printf("%s         _\\ _~-\\___                                       \n", fourTabs);
+    printf("%s =  = ==(____AA____D                                      \n", fourTabs);
+    printf("%s             \\_____\\___________________,-~~~~~~~`-.._     \n", fourTabs);
+    printf("%s             /     o O o o o o O O o o o o o o O o  |\\_   \n", fourTabs);
+    printf("%s             `~-.__        ___..----..                  ) \n", fourTabs);
+    printf("%s                   `---~~\\___________/------------`````   \n", fourTabs);
+    printf("%s                   =  ===(_________D                      \n", fourTabs);
+
+    // AIRCRAFT 2
+    printf("\n\n%sJunkers Ju-87D Stuka\n", fiveTabs);
+    printf("%s------\n", fourTabs);
+    printf("%s | | # \\                                      |  \n", fourTabs);
+    printf("%s | ____ \\_________|----^\"|\"\"\"\"\"|\"\\___________ |  \n", fourTabs);
+    printf("%s  \\___\\   FO + 94 >>    `\"\"\"\"\"\"\"\"     =====  \"|D \n", fourTabs);
+    printf("%s        ^^-------____--\"\"\"\"\"\"\"\"\"\"+\"\"--_  __--\"|  \n", fourTabs);
+    printf("%s                    `\"\"|\"-->####)+---|`\"\"     |  \n", fourTabs);
+    printf("%s                                  \\  \\           \n", fourTabs);
+    printf("%s                                 <- O -)         \n", fourTabs);
+    printf("%s                                   `\"'           \n", fourTabs);
+
+    // AIRCRAFT 3
+    printf("\n%sF - 16\n", fiveTabs);
+    printf("%s  ___                                      \n", fourTabs);
+    printf("%s |   \\                                     \n", fourTabs);
+    printf("%s |    \\                   ___              \n", fourTabs);
+    printf("%s |_____\\______________.-'`   `'-.,___      \n", fourTabs);
+    printf("%s/| _____     _________            ___>---  \n", fourTabs);
+    printf("%s\\|___________________________,.-'`         \n", fourTabs);
+    printf("%s          `'-.,__________)                 \n", fourTabs);
+
+    printf("\n\n%sConcorde\n", fiveTabs);
+    printf("%s              .------,                      \n", fourTabs);
+    printf("%s              =\\      \\                     \n", fourTabs);
+    printf("%s .---.         =\\      \\                    \n", fourTabs);
+    printf("%s | C~ \\         =\\      \\                   \n", fourTabs);
+    printf("%s |     `----------'------'----------,       \n", fourTabs);
+    printf("%s.'     LI.-.LI LI LI LI LI LI LI.-.LI`-.    \n", fourTabs);
+    printf("%s\\ _/.____|_|______.------,______|_|_____)   \n", fourTabs);
+    printf("%s                 /      /                   \n", fourTabs);
+    printf("%s               =/      /                    \n", fourTabs);
+    printf("%s              =/      /                     \n", fourTabs);
+    printf("%s             =/      /                      \n", fourTabs);
+    printf("%s             /_____,'                       \n", fourTabs);
 }

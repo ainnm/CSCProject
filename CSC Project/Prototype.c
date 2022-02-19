@@ -53,7 +53,7 @@ int main()
             Aircraft();
             break;
         default:
-            printf("\n\n%s      Invalid input", sixTabs);
+            printf("\n\n%s          Invalid input", sixTabs);
             break;
         }
         printf("\n\n%s\t---------End of operation----------\n\n", fiveTabs);

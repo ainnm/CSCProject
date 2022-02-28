@@ -1,6 +1,6 @@
 #include <stdio.h>
-#define fiveTabs "\n\n\n\n\n"
-#define fourTabs "\n\n\n\n"
+#define fiveTabs "\t\t\t\t\t"
+#define fourTabs "\t\t\t\t"
 
 int main()
 {

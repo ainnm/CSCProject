@@ -4,6 +4,15 @@
 int Booking(void);
 void Destination(void);
 
+void Yellow();
+void Blue();
+void Green();
+void White();
+void Red();
+void Reset();
+
+void Aircraft();
+
 int main()
 {
 
@@ -11,6 +20,7 @@ int main()
     char wantContinue;
     int canContinue = 1;
 
+    White(); // To make white bold text
     /*----------------------------------------------------------------THIS IS ART------------------------------------------------------------*/
     printf("              888                                                     ,e,                                          \n");
     printf(" dP\"Y  ,e e,  888  ,\"Y88b 888 8e   e88 888  e88 88e  888,8,    ,\"Y88b  \"  888,8, Y8b Y8b Y888P  ,\"Y88b Y8b Y888P  dP\"Y \n");
@@ -20,10 +30,15 @@ int main()
     printf("                                    ,  88P                                                                888          \n");
     printf("                                   \"8\",P\"                                                                 888          \n\n\n");
     /*----------------------------------------------------------------THIS IS ART------------------------------------------------------------*/
+    Reset(); // Reset white bold text back to default color
 
     while (canContinue == 1)
     {
+
+        Blue();
         printf("%81s", "----------------Menu----------------\n\n");
+        Reset();
+
         printf("%61s", "[0] Start Booking\n");
         printf("%67s", "[1] Display Destination\n");
 
@@ -46,7 +61,10 @@ int main()
             break;
         }
 
+        Red();
         printf("\n\n%79s\n\n", "--------------Shutdown--------------");
+        Reset();
+
         printf("\n%85s", "Do you still want to choose other menu? [y/n]: ");
         scanf(" %c", &wantContinue);
 
@@ -136,7 +154,11 @@ int Booking(void)
         printf("\n%84s", "Please insert number of tickets you want to buy: ");
         scanf("%d", &numberTicket);
         totalPrice = numberTicket * ticketPrice;
+
+        Green();
         printf("\n%78s\n", "--------------Receipt--------------");
+        Reset();
+
         printf("\n%63s%s\n", "Destination: ", destinationName);
         printf("%63s%s\n", "Departure Time: ", departure);
         printf("%63s%s\n", "Arrival Time: ", arrival);
@@ -146,28 +168,14 @@ int Booking(void)
             priceDiscount = discount * totalPrice;
             printf("%65s%.2f\n%62s %d", "Total ticket price: RM", totalPrice, "Total number ticket:", numberTicket);
             printf("\n\n%102s\n%78s", "Due to the pandemic of Covid 19, Selangor Airways will give a 10%% discount ", "for customers with a total price more than RM500.00.");
-            printf("\n\n%80s\n\n", "Thanks for choosing Selangor Airways!");
-            printf("%90s", "______                                                    \n");
-            printf("%90s", "         _\\ _~-\\___                                       \n");
-            printf("%90s", " =  = ==(____AA____D                                      \n");
-            printf("%90s", "             \\_____\\___________________,-~~~~~~~`-.._     \n");
-            printf("%90s", "             /     o O o o o o O O o o o o o o O o  |\\_   \n");
-            printf("%90s", "             `~-.__        ___..----..                  ) \n");
-            printf("%90s", "                   `---~~\\___________/------------`````   \n");
-            printf("%90s", "                   =  ===(_________D                      \n");
+
+            Aircraft();
         }
         else
         {
             printf("%65s%.2f\n%63s%d", "Total ticket price: RM", totalPrice, "Number of ticket: ", numberTicket);
-            printf("\n\n%80s\n\n", "Thanks for choosing Selangor Airways!");
-            printf("%90s", "______                                                    \n");
-            printf("%90s", "         _\\ _~-\\___                                       \n");
-            printf("%90s", " =  = ==(____AA____D                                      \n");
-            printf("%90s", "             \\_____\\___________________,-~~~~~~~`-.._     \n");
-            printf("%90s", "             /     o O o o o o O O o o o o o o O o  |\\_   \n");
-            printf("%90s", "             `~-.__        ___..----..                  ) \n");
-            printf("%90s", "                   `---~~\\___________/------------`````   \n");
-            printf("%90s", "                   =  ===(_________D                      \n");
+
+            Aircraft();
         }
     }
 }
@@ -175,7 +183,10 @@ int Booking(void)
 void Destination(void)
 {
 
+    printf("\033[1;33m");
     printf("\n\n%79s\n", "-------Available Destinations-------");
+    printf("\033[0m");
+
     printf("\n\n%107s\n", "Destination Code      Destination         Departure Time     Arrival Time      Ticket Price");
     printf("%107s", "[A]             Kuantan               9:30am            10:40pm          RM185.50 \n");
     printf("%107s", "[B]             Kuala Terengganu      10:30am           12:00pm          RM190.50 \n");
@@ -183,4 +194,50 @@ void Destination(void)
     printf("%107s", "[D]             Johor Bharu           10:00am           11:15pm          RM185.50 \n");
     printf("%107s", "[E]             Penang                11:00am           12:30pm          RM190.50 \n");
     printf("%107s", "[F]             Alor Setar            12:00am           2:00pm           RM210.00 \n");
+}
+
+void White()
+{
+    printf("\033[1;37m");
+}
+
+void Blue()
+{
+    printf("\033[1;34m");
+}
+
+void Yellow()
+{
+    printf("\033[1;33m");
+}
+
+void Green()
+{
+    printf("\033[1;32m");
+}
+
+void Red()
+{
+    printf("\033[1;31m");
+}
+
+void Reset()
+{
+    printf("\033[0m");
+}
+
+void Aircraft()
+{
+    White();
+    printf("\n\n%80s\n\n", "Thanks for choosing Selangor Airways!");
+
+    printf("%90s", "______                                                    \n");
+    printf("%90s", "         _\\ _~-\\___                                       \n");
+    printf("%90s", " =  = ==(____AA____D                                      \n");
+    printf("%90s", "             \\_____\\___________________,-~~~~~~~`-.._     \n");
+    printf("%90s", "             /     o O o o o o O O o o o o o o O o  |\\_   \n");
+    printf("%90s", "             `~-.__        ___..----..                  ) \n");
+    printf("%90s", "                   `---~~\\___________/------------`````   \n");
+    printf("%90s", "                   =  ===(_________D                      \n");
+    Reset();
 }

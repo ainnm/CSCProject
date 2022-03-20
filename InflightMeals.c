@@ -1,18 +1,13 @@
 #include <stdio.h>
 // Made by Ain
 
-void Yellow();
-void Reset();
-
 int main()
 {
     int num;
     char meal, repeat;
     float price, total = 0;
 
-    Yellow();
     printf("----------------Meal----------------\n");
-    Reset();
 
     printf("[A] Nasi lemak\t\t(RM15.00)\n");
     printf("[B] Nasi kandar\t\t(RM15.00)\n");
@@ -67,14 +62,4 @@ int main()
 
     printf("\nTotal price: %.2f", total);
     return 0;
-}
-
-void Yellow()
-{
-    printf("\033[1;33m");
-}
-
-void Reset()
-{
-    printf("\033[0m");
 }

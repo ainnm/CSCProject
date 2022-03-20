@@ -4,13 +4,6 @@
 int Booking(void);
 void Destination(void);
 
-void Yellow();
-void Blue();
-void Green();
-void White();
-void Red();
-void Reset();
-
 void Aircraft();
 
 int main()
@@ -35,9 +28,7 @@ int main()
     while (canContinue == 1)
     {
 
-        Blue();
         printf("%81s", "----------------Menu----------------\n\n");
-        Reset();
 
         printf("%61s", "[0] Start Booking\n");
         printf("%67s", "[1] Display Destination\n");
@@ -61,9 +52,7 @@ int main()
             break;
         }
 
-        Red();
         printf("\n\n%79s\n\n", "--------------Shutdown--------------");
-        Reset();
 
         printf("\n%85s", "Do you still want to choose other menu? [y/n]: ");
         scanf(" %c", &wantContinue);
@@ -155,9 +144,7 @@ int Booking(void)
         scanf("%d", &numberTicket);
         totalPrice = numberTicket * ticketPrice;
 
-        Green();
         printf("\n%78s\n", "--------------Receipt--------------");
-        Reset();
 
         printf("\n%63s%s\n", "Destination: ", destinationName);
         printf("%63s%s\n", "Departure Time: ", departure);
@@ -183,9 +170,7 @@ int Booking(void)
 void Destination(void)
 {
 
-    printf("\033[1;33m");
     printf("\n\n%79s\n", "-------Available Destinations-------");
-    printf("\033[0m");
 
     printf("\n\n%107s\n", "Destination Code      Destination         Departure Time     Arrival Time      Ticket Price");
     printf("%107s", "[A]             Kuantan               9:30am            10:40pm          RM185.50 \n");
@@ -196,39 +181,9 @@ void Destination(void)
     printf("%107s", "[F]             Alor Setar            12:00am           2:00pm           RM210.00 \n");
 }
 
-void White()
-{
-    printf("\033[1;37m");
-}
-
-void Blue()
-{
-    printf("\033[1;34m");
-}
-
-void Yellow()
-{
-    printf("\033[1;33m");
-}
-
-void Green()
-{
-    printf("\033[1;32m");
-}
-
-void Red()
-{
-    printf("\033[1;31m");
-}
-
-void Reset()
-{
-    printf("\033[0m");
-}
-
 void Aircraft()
 {
-    White();
+
     printf("\n\n%80s\n\n", "Thanks for choosing Selangor Airways!");
 
     printf("%90s", "______                                                    \n");
@@ -239,5 +194,4 @@ void Aircraft()
     printf("%90s", "             `~-.__        ___..----..                  ) \n");
     printf("%90s", "                   `---~~\\___________/------------`````   \n");
     printf("%90s", "                   =  ===(_________D                      \n");
-    Reset();
 }

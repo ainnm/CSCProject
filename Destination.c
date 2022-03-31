@@ -142,7 +142,7 @@ int Booking(void)
             discount = 0.1;
             priceDiscount = discount * totalPrice;
             printf("%65s%.2f\n%62s %d", "Total ticket price: RM", totalPrice, "Total number ticket:", numberTicket);
-            printf("\n\n%102s\n%78s", "Due to the pandemic of Covid 19, Selangor Airways will give a 10%% discount ", "for customers with a total price more than RM500.00.");
+            printf("\n\n%102s\n%78s", "Due to the pandemic of Covid 19, Selangor Airways will give a 10% discount ", "for customers with a total price more than RM500.00.");
         }
         else
         {

@@ -13,6 +13,18 @@ int main()
     char wantContinue;
     int canContinue = 1;
 
+    White(); // To make white bold text
+    /*----------------------------------------------------------------THIS IS ART------------------------------------------------------------*/
+    printf("              888                                                     ,e,                                          \n");
+    printf(" dP\"Y  ,e e,  888  ,\"Y88b 888 8e   e88 888  e88 88e  888,8,    ,\"Y88b  \"  888,8, Y8b Y8b Y888P  ,\"Y88b Y8b Y888P  dP\"Y \n");
+    printf("C88b  d88 88b 888 \"8\" 888 888 88b d888 888 d888 888b 888 \"    \"8\" 888 888 888 \"   Y8b Y8b Y8P  \"8\" 888  Y8b Y8P  C88b  \n");
+    printf(" Y88D 888   , 888 ,ee 888 888 888 Y888 888 Y888 888P 888      ,ee 888 888 888      Y8b Y8b \"   ,ee 888   Y8b Y    Y88D \n");
+    printf("d,dP   \"YeeP\" 888 \"88 888 888 888  \"88 888  \"88 88\"  888      \"88 888 888 888       YP  Y8P    \"88 888    888    d,dP  \n");
+    printf("                                    ,  88P                                                                888          \n");
+    printf("                                   \"8\",P\"                                                                 888          \n\n\n");
+    /*----------------------------------------------------------------THIS IS ART------------------------------------------------------------*/
+    Reset(); // Reset white bold text back to default color
+
     while (canContinue == 1)
     {
 
@@ -143,10 +155,14 @@ int Booking(void)
             priceDiscount = discount * totalPrice;
             printf("%65s%.2f\n%62s %d", "Total ticket price: RM", totalPrice, "Total number ticket:", numberTicket);
             printf("\n\n%102s\n%78s", "Due to the pandemic of Covid 19, Selangor Airways will give a 10%% discount ", "for customers with a total price more than RM500.00.");
+
+            Aircraft();
         }
         else
         {
             printf("%65s%.2f\n%63s%d", "Total ticket price: RM", totalPrice, "Number of ticket: ", numberTicket);
+
+            Aircraft();
         }
     }
 }
@@ -163,4 +179,19 @@ void Destination(void)
     printf("%107s", "[D]             Johor Bharu           10:00am           11:15pm          RM185.50 \n");
     printf("%107s", "[E]             Penang                11:00am           12:30pm          RM190.50 \n");
     printf("%107s", "[F]             Alor Setar            12:00am           2:00pm           RM210.00 \n");
+}
+
+void Aircraft()
+{
+
+    printf("\n\n%80s\n\n", "Thanks for choosing Selangor Airways!");
+
+    printf("%90s", "______                                                    \n");
+    printf("%90s", "         _\\ _~-\\___                                       \n");
+    printf("%90s", " =  = ==(____AA____D                                      \n");
+    printf("%90s", "             \\_____\\___________________,-~~~~~~~`-.._     \n");
+    printf("%90s", "             /     o O o o o o O O o o o o o o O o  |\\_   \n");
+    printf("%90s", "             `~-.__        ___..----..                  ) \n");
+    printf("%90s", "                   `---~~\\___________/------------`````   \n");
+    printf("%90s", "                   =  ===(_________D                      \n");
 }

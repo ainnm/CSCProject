@@ -1,6 +1,6 @@
 #include <stdio.h>
 int main()
-
+// Made by Ainul
 {
 
     char type;

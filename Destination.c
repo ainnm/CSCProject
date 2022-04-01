@@ -1,15 +1,14 @@
 #include <stdio.h>
 #include <string.h>
 // Made by Megat
-int Booking(void);
+void Booking(void);
 void Destination(void);
 
 int main()
 {
 
-    int menu;
+    int menu, canContinue = 1;
     char wantContinue;
-    int canContinue = 1;
 
     while (canContinue == 1)
     {
@@ -55,20 +54,13 @@ int main()
     }
 }
 
-int Booking(void)
+void Booking(void)
 {
     Destination();
 
-    int numberTicket;
-    char destinationCharacter;
-    float totalPrice;
-    char destinationName[60];
-    char departure[60];
-    char arrival[60];
-    float discount;
-    float priceDiscount;
-    int canContinue2 = 1;
-    float ticketPrice;
+    int numberTicket, canContinue2 = 1;
+    char destinationCharacter, destinationName[60], departure[60], arrival[60];
+    float totalPrice, discount, priceDiscount, ticketPrice;
 
     printf("\n\n%96s", "Please choose your desired destination based on the destination code: ");
     scanf(" %c", &destinationCharacter);

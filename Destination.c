@@ -4,8 +4,6 @@
 int Booking(void);
 void Destination(void);
 
-void Aircraft();
-
 int main()
 {
 

@@ -13,7 +13,6 @@ int main()
     char wantContinue;
     int canContinue = 1;
 
-    White(); // To make white bold text
     /*----------------------------------------------------------------THIS IS ART------------------------------------------------------------*/
     printf("              888                                                     ,e,                                          \n");
     printf(" dP\"Y  ,e e,  888  ,\"Y88b 888 8e   e88 888  e88 88e  888,8,    ,\"Y88b  \"  888,8, Y8b Y8b Y888P  ,\"Y88b Y8b Y888P  dP\"Y \n");
@@ -23,7 +22,6 @@ int main()
     printf("                                    ,  88P                                                                888          \n");
     printf("                                   \"8\",P\"                                                                 888          \n\n\n");
     /*----------------------------------------------------------------THIS IS ART------------------------------------------------------------*/
-    Reset(); // Reset white bold text back to default color
 
     while (canContinue == 1)
     {

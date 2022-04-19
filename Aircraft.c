@@ -4,7 +4,7 @@
 
 int main()
 {
-
+    printf("Random names");
     printf("\n\n%s   -------Collections of Aircraft------\n\n", fiveTabs);
 
     // AIRCRAFT 1

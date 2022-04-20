@@ -5,6 +5,8 @@ int Booking();
 void Destination();
 void Aircraft();
 void UserInfo();
+void ListMeals();
+void InflightMeals();
 
 char name[200], nationality[200], placeOfBirth[200];
 int age;
@@ -35,6 +37,7 @@ int main()
 
         printf("%61s", "[0] Start Booking\n");
         printf("%67s", "[1] Display Destination\n");
+        printf("%70s", "[2] Display Inflight Meals\n");
 
         printf("\n\n%94s", "Choose the number provided in the menu to go to your desired page: ");
         scanf("%d", &menu);
@@ -47,6 +50,10 @@ int main()
             break;
         case 1:
             Destination();
+            canContinue = 0;
+            break;
+        case 2:
+            ListMeals();
             canContinue = 0;
             break;
         default:
@@ -265,4 +272,71 @@ void UserInfo()
     {
         printf("\nDue to the fact that you doesn't agree with our terms and regulations we cannot continue this operation.");
     }
+}
+void ListMeals()
+{
+    printf("\n");
+    printf("%81s", "----------------Meal----------------\n");
+
+    printf("%82s", "[A] Nasi lemak               (RM15.00)\n");
+    printf("%82s", "[B] Nasi kandar              (RM15.00)\n");
+    printf("%82s", "[C] Sandwich                 (RM 7.00)\n");
+    printf("%82s", "[D] Nasi goreng ayam         (RM15.00)\n");
+    printf("%82s", "[E] Mee kari                 (RM10.00)\n");
+    printf("%82s", "[F] Spaghetti bolognese      (RM13.00)\n");
+}
+
+void InflightMeals()
+{
+    int num;
+    char meal, repeat;
+    float price, total = 0;
+
+    ListMeals();
+
+    do
+    {
+        printf("\nEnter code of meal: ");
+        scanf(" %c", &meal);
+        printf("Total: ");
+        scanf("%d", &num);
+
+        switch (meal)
+        {
+        case 'a':
+        case 'A':
+            price = num * 15.00;
+            break;
+        case 'b':
+        case 'B':
+            price = num * 15.00;
+            break;
+        case 'c':
+        case 'C':
+            price = num * 7.00;
+            break;
+        case 'd':
+        case 'D':
+            price = num * 15.00;
+            break;
+        case 'e':
+        case 'E':
+            price = num * 10.00;
+            break;
+        case 'f':
+        case 'F':
+            price = num * 13.00;
+            break;
+        default:
+            printf("Please enter right code of meal\n");
+            break;
+        }
+
+        printf("Do you want to book another meal (Y/N): ");
+        scanf(" %c", &repeat);
+
+        total += price;
+    } while (repeat == 'Y' || repeat == 'y');
+
+    printf("\nTotal price: %.2f", total);
 }

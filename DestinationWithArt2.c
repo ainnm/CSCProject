@@ -1,9 +1,8 @@
 #include <stdio.h>
 #include <string.h>
-// Made by Megat
-int Booking(void);
-void Destination(void);
 
+int Booking();
+void Destination();
 void Aircraft();
 
 int main()
@@ -165,7 +164,7 @@ int Booking(void)
     }
 }
 
-void Destination(void)
+void Destination()
 {
 
     printf("\n\n%79s\n", "-------Available Destinations-------");

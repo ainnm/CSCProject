@@ -4,6 +4,10 @@
 int Booking();
 void Destination();
 void Aircraft();
+void UserInfo();
+
+char name[200], nationality[200], placeOfBirth[200];
+int age;
 
 int main()
 {
@@ -21,6 +25,8 @@ int main()
     printf("                                    ,  88P                                                                888          \n");
     printf("                                   \"8\",P\"                                                                 888          \n\n\n");
     /*----------------------------------------------------------------THIS IS ART------------------------------------------------------------*/
+
+    UserInfo();
 
     while (canContinue == 1)
     {
@@ -66,7 +72,7 @@ int main()
     }
 }
 
-int Booking(void)
+int Booking()
 {
     Destination();
 
@@ -141,6 +147,13 @@ int Booking(void)
         scanf("%d", &numberTicket);
         totalPrice = numberTicket * ticketPrice;
 
+        printf("\n\n");
+        printf("%79s", "-----Personal Information------\n\n");
+        printf("%63s %s", "Name:", name);
+        printf("%63s %d\n", "Age:", age);
+        printf("%63s %s", "Nationality:", nationality);
+        printf("%63s %s\n", "Place of birth:", placeOfBirth);
+
         printf("\n%78s\n", "--------------Receipt--------------");
 
         printf("\n%63s%s\n", "Destination: ", destinationName);
@@ -191,4 +204,65 @@ void Aircraft()
     printf("%90s", "             `~-.__        ___..----..                  ) \n");
     printf("%90s", "                   `---~~\\___________/------------`````   \n");
     printf("%90s", "                   =  ===(_________D                      \n");
+}
+
+void UserInfo()
+{
+    char terms1, terms2;
+    int birthYear, i, numberOfTerms = 2;
+
+    printf("\n\n");
+    printf("%82s", "-------------User Info--------------\n\n");
+
+    printf("%62s", "Insert your full name: ");
+    fgets(name, 200, stdin);
+
+    printf("%62s", "Please insert your nationality: ");
+    fgets(nationality, 200, stdin);
+
+    printf("%62s", "Place of birth: ");
+    fgets(placeOfBirth, 200, stdin);
+
+    printf("%62s", "Please insert your age: ");
+    scanf("%d", &age);
+
+    if (age < 18)
+    {
+        printf("%80s", "Sorry but you're not permitted to travel alone at the age of below 18\n");
+    }
+
+    printf("\n\n");
+    printf("%81s", "-------Terms and Regulations--------\n\n");
+    printf("%97s", "Please read the terms accordingly and agree to continue this operation");
+
+    for (i = 0; i < numberOfTerms; i++)
+    {
+        switch (i)
+        {
+        case 0:
+        {
+            printf("\n\n");
+            printf("%102s", "Customers must arrive at the departure stations 30 mins before take off (y/n): ");
+            scanf(" %c", &terms1);
+            break;
+        }
+        case 1:
+        {
+            printf("\n");
+            printf("%110s", "Customers should not bring any dangerous substance or alcholic drinks on the aircraft (y/n): ");
+            scanf(" %c", &terms2);
+            break;
+        }
+        }
+    }
+
+    if (terms1 == 'y' && terms2 == 'y')
+    {
+        printf("\n");
+        printf("%77s", "Thank you for your cooperation\n\n");
+    }
+    else
+    {
+        printf("\nDue to the fact that you doesn't agree with our terms and regulations we cannot continue this operation.");
+    }
 }

@@ -273,6 +273,7 @@ void UserInfo()
         printf("\nDue to the fact that you doesn't agree with our terms and regulations we cannot continue this operation.");
     }
 }
+
 void ListMeals()
 {
     printf("\n");
@@ -290,42 +291,37 @@ void InflightMeals()
 {
     int num;
     char meal, repeat;
-    float price, total = 0;
+    float price[6] = {15.00, 15.00, 7.00, 15.00, 10.00, 13.00}, totalPrice = 0;
 
     ListMeals();
 
     do
     {
         printf("\nEnter code of meal: ");
-        scanf(" %c", &meal);
+        scanf("%d", &meal);
         printf("Total: ");
         scanf("%d", &num);
 
         switch (meal)
         {
-        case 'a':
-        case 'A':
-            price = num * 15.00;
+        case 1:
+            totalPrice = num * price[meal - 1];
             break;
-        case 'b':
-        case 'B':
-            price = num * 15.00;
+        case 2:
+            totalPrice = num * price[meal - 1];
             break;
-        case 'c':
-        case 'C':
-            price = num * 7.00;
+        case 3:
+            totalPrice = num * price[meal - 1];
             break;
-        case 'd':
-        case 'D':
-            price = num * 15.00;
+        case 4:
+            totalPrice = num * price[meal - 1];
             break;
-        case 'e':
-        case 'E':
-            price = num * 10.00;
+        case 5:
+            totalPrice = num * price[meal - 1];
             break;
-        case 'f':
-        case 'F':
-            price = num * 13.00;
+        case 6:
+
+            totalPrice = num * price[meal - 1];
             break;
         default:
             printf("Please enter right code of meal\n");
@@ -335,8 +331,7 @@ void InflightMeals()
         printf("Do you want to book another meal (Y/N): ");
         scanf(" %c", &repeat);
 
-        total += price;
     } while (repeat == 'Y' || repeat == 'y');
 
-    printf("\nTotal price: %.2f", total);
+    printf("\nTotal price: %.2f", totalPrice);
 }

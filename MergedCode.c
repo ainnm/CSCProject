@@ -49,7 +49,7 @@ int main()
             canContinue = 0;
             break;
         case 1:
-            Destination();
+            ListDestination();
             canContinue = 0;
             break;
         case 2:
@@ -216,13 +216,13 @@ void UserInfo()
     printf("%82s", "-------------User Info--------------\n\n");
 
     printf("%62s", "Insert your full name: ");
-    fgets(name, 200, stdin);
+    gets(name);
 
     printf("%62s", "Please insert your nationality: ");
-    fgets(nationality, 200, stdin);
+    gets(nationality);
 
     printf("%62s", "Place of birth: ");
-    fgets(placeOfBirth, 200, stdin);
+    gets(placeOfBirth);
 
     printf("%62s", "Please insert your age: ");
     scanf("%d", &age);

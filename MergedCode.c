@@ -2,7 +2,7 @@
 #include <string.h>
 
 int Booking();
-void Destination();
+void ListDestination();
 void Aircraft();
 void UserInfo();
 void ListMeals();
@@ -81,18 +81,11 @@ int main()
 
 int Booking()
 {
-    Destination();
+    ListDestination();
 
-    int numberTicket;
-    char destinationCharacter;
-    float totalPrice;
-    char destinationName[60];
-    char departure[60];
-    char arrival[60];
-    float discount;
-    float priceDiscount;
-    int canContinue2 = 1;
-    float ticketPrice;
+    int numberTicket, canContinue2 = 1;
+    char destinationCharacter, destinationName[60], departure[60], arrival[60];
+    float totalPrice, discount, priceDiscount, ticketPrice;
 
     printf("\n\n%96s", "Please choose your desired destination based on the destination code: ");
     scanf(" %c", &destinationCharacter);
@@ -166,6 +159,7 @@ int Booking()
         printf("\n%63s%s\n", "Destination: ", destinationName);
         printf("%63s%s\n", "Departure Time: ", departure);
         printf("%63s%s\n", "Arrival Time: ", arrival);
+
         if (totalPrice > 500)
         {
             discount = 0.1;
@@ -184,7 +178,7 @@ int Booking()
     }
 }
 
-void Destination()
+void ListDestination()
 {
 
     printf("\n\n%79s\n", "-------Available Destinations-------");
@@ -279,12 +273,12 @@ void ListMeals()
     printf("\n");
     printf("%81s", "----------------Meal----------------\n");
 
-    printf("%82s", "[A] Nasi lemak               (RM15.00)\n");
-    printf("%82s", "[B] Nasi kandar              (RM15.00)\n");
-    printf("%82s", "[C] Sandwich                 (RM 7.00)\n");
-    printf("%82s", "[D] Nasi goreng ayam         (RM15.00)\n");
-    printf("%82s", "[E] Mee kari                 (RM10.00)\n");
-    printf("%82s", "[F] Spaghetti bolognese      (RM13.00)\n");
+    printf("%82s", "[1] Nasi lemak               (RM15.00)\n");
+    printf("%82s", "[2] Nasi kandar              (RM15.00)\n");
+    printf("%82s", "[3] Sandwich                 (RM 7.00)\n");
+    printf("%82s", "[4] Nasi goreng ayam         (RM15.00)\n");
+    printf("%82s", "[5] Mee kari                 (RM10.00)\n");
+    printf("%82s", "[6] Spaghetti bolognese      (RM13.00)\n");
 }
 
 void InflightMeals()

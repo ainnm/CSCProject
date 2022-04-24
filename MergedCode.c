@@ -10,7 +10,7 @@ void InflightMeals();
 
 char name[200], nationality[200], placeOfBirth[200];
 int age;
-
+//lllllll
 int main()
 {
 
